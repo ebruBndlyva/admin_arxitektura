@@ -1,6 +1,6 @@
 import {createBrowserRouter,RouterProvider} from "react-router-dom"
 import ROUTES from "./Router/router"
-import "./SCSS/style.scss"
+import "./Styles/style.scss"
 const router = createBrowserRouter(ROUTES)
 
 function App() {

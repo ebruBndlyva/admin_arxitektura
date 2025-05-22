@@ -12,11 +12,14 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   }
   .dynamic-table {
-    background-color: white;
     width: 100%;
+    @include flex(flex-start, flex-start, column, 20px);
+    background-color: white;
+
     border-radius: 5px;
     padding: 10px;
     .table-head {
+      width: 100%;
       @include flex(space-between, center, row);
       h3 {
         text-transform: capitalize;
@@ -34,7 +37,28 @@
         border-radius: 5px;
 
         cursor: pointer;
-        
+      }
+    }
+    .action-btns {
+      @include flex(flex-start, center);
+
+      border-radius: 5px;
+      button {
+        @include flex(center, center);
+        color: white;
+        background-color: $site-color;
+        padding: 8px 10px;
+
+        cursor: pointer;
+        &:first-of-type {
+          border-bottom-left-radius: 5px;
+          border-top-left-radius: 5px;
+        }
+        &:last-of-type {
+          border-bottom-right-radius: 5px;
+          border-top-right-radius: 5px;
+          background-color: rgb(247, 63, 118);
+        }
       }
     }
   }
