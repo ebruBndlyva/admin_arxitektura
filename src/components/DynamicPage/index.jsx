@@ -6,8 +6,8 @@ import StoreForm from '../Forms/StoreForm';
 
 
 
-function DynamicPage({ columns, data }) {
-    const [open, setOpen] = useState(false);
+function DynamicPage({ columns, data,onSubmit }) {
+    const [open, setOpen] = useState(false); 
     let location = useLocation()
     let pathname = location.pathname.split('/')[1]
     const dataWithKey = data.map(item => ({ ...item, key: item.id }));
@@ -24,9 +24,17 @@ function DynamicPage({ columns, data }) {
                     <h3>{pathname} Data</h3>
                     <button onClick={() => setOpen(true) } ><IoMdAddCircle /> Add {pathname.slice(0, -1)}</button>
                 </div>
+                <div className="actions">
+                    <input type="text" placeholder='Search' />
+                    <select>
+                        <option value="">All</option>
+                        <option value="close">Close</option>
+                        <option value="open">Open</option>  
+                    </select>
+                </div>
                 <Table style={{ width: "100%" }} columns={columns} dataSource={dataWithKey} />
             </div>
-            <StoreForm open={open} onClose = {onClose} />
+            <StoreForm open={open} onClose = {onClose} initialValues={null} onSubmit={onSubmit} />
         </div>
     )
 }

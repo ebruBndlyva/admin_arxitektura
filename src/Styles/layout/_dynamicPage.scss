@@ -39,6 +39,28 @@
         cursor: pointer;
       }
     }
+    .actions {
+      width: 100%;
+      @include flex(space-between, center, row);
+      input {
+        background-color: white;
+     
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 5px;
+        &:focus {
+          outline: none;
+        }
+      }
+      select {
+        background-color: white;
+      
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 5px;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
     .action-btns {
       @include flex(flex-start, center);
 

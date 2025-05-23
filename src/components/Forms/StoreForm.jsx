@@ -1,19 +1,21 @@
 import React, { useState } from 'react'
 import { Drawer } from 'antd';
-import {  useFormik } from 'formik';
+import { useFormik } from 'formik';
 import * as Yup from 'yup';
-function StoreForm({ open, onClose }) {
+function StoreForm({ open, onClose, initialValues, onSubmit }) {
 
     const formik = useFormik({
-        initialValues: {
-            Name: '',
+       
+        initialValues: initialValues || {
+            name: '',
             location: '',
             manager: '',
             phone: '',
             status: '',
         },
+         enableReinitialize: true,
         validationSchema: Yup.object({
-            Name: Yup.string()
+            name: Yup.string()
                 .required('Required'),
             location: Yup.string()
                 .required('Required'),
@@ -24,9 +26,7 @@ function StoreForm({ open, onClose }) {
                 .required('Required'),
 
         }),
-        onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
-        },
+        onSubmit,
     });
     return (
         <div >
@@ -39,17 +39,17 @@ function StoreForm({ open, onClose }) {
                 className='store-form'
             >
                 <form onSubmit={formik.handleSubmit}>
-                    <label htmlFor="Name">Name</label>
+                    <label htmlFor="name">Name</label>
                     <input
-                        id="Name"
-                        name="Name"
+                        id="name"
+                        name="name"
                         type="text"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        value={formik.values.Name}
+                        value={formik.values.name}
                     />
-                    {formik.touched.Name && formik.errors.Name ? (
-                        <div>{formik.errors.Name}</div>
+                    {formik.touched.name && formik.errors.name ? (
+                        <div>{formik.errors.name}</div>
                     ) : null}
 
                     <label htmlFor="manager">Manager</label>

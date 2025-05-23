@@ -1,0 +1,13 @@
+{
+  "stores": [
+    {
+      "id": "c438",
+      "name": "Store5",
+      "location": "Location 1",
+      "manager": "John Doe",
+      "phone": "123-456-789009",
+      "status": "open",
+      "key": "c438"
+    }
+  ]
+}
