@@ -1,13 +1,100 @@
 {
   "stores": [
     {
-      "id": "c438",
-      "name": "Store5",
+      "id": "s001",
+      "name": "Central Market Berlin",
+      "location": "Alexanderplatz 5, Berlin, Germany",
+      "manager": "Lena Schneider",
+      "phone": "+49 30 1234567",
+      "status": "open"
+    },
+    {
+      "id": "s002",
+      "name": "Paris Fresh",
+      "location": "12 Rue de Rivoli, Paris, France",
+      "manager": "Julien Moreau",
+      "phone": "+33 1 23456789",
+      "status": "close"
+    },
+    {
+      "id": "s003",
+      "name": "Tokyo Market Hub",
+      "location": "3-5-1 Marunouchi, Tokyo, Japan",
+      "manager": "Yuki Tanaka",
+      "phone": "+81 3 45678901",
+      "status": "open"
+    },
+    {
+      "id": "s004",
+      "name": "London Grocery Spot",
+      "location": "221B Baker Street, London, UK",
+      "manager": "Oliver Smith",
+      "phone": "+44 20 79460000",
+      "status": "open"
+    },
+    {
+      "id": "s005",
+      "name": "New York Foods",
+      "location": "350 5th Ave, New York, USA",
+      "manager": "Emma Johnson",
+      "phone": "+1 212 5556789",
+      "status": "close"
+    },
+    {
+      "id": "s006",
+      "name": "Toronto SuperStore",
+      "location": "123 Queen St W, Toronto, Canada",
+      "manager": "Noah Williams",
+      "phone": "+1 416 5557890",
+      "status": "open"
+    },
+    {
+      "id": "s007",
+      "name": "Dubai Express Market",
+      "location": "Sheikh Zayed Road, Dubai, UAE",
+      "manager": "Fatima Al-Farsi",
+      "phone": "+971 4 1234567",
+      "status": "open"
+    },
+    {
+      "id": "s008",
+      "name": "Sydney Grocery Co.",
+      "location": "100 George St, Sydney, Australia",
+      "manager": "Liam Thompson",
+      "phone": "+61 2 98765432",
+      "status": "close"
+    },
+    {
+      "id": "s009",
+      "name": "Madrid Supermart",
+      "location": "Gran Via 21, Madrid, Spain",
+      "manager": "Isabella Garcia",
+      "phone": "+34 91 1234567",
+      "status": "open"
+    },
+    {
+      "id": "s010",
+      "name": "Rome Daily Mart",
+      "location": "Via del Corso 18, Rome, Italy",
+      "manager": "Luca Bianchi",
+      "phone": "+39 06 9876543",
+      "status": "close"
+    },
+    {
+      "id": "f83d",
+      "name": "New Store",
       "location": "Location 1",
       "manager": "John Doe",
-      "phone": "123-456-789009",
-      "status": "open",
-      "key": "c438"
+      "phone": "123-456-7890",
+      "status": "open"
+    },
+    {
+      "id": "0029",
+      "name": "Store5",
+      "location": "Baku",
+      "manager": "John Doe",
+      "phone": "123-456-7890",
+      "status": "open"
     }
   ]
 }

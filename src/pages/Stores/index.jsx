@@ -5,9 +5,10 @@ import { Col, Space, Tag } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { createStore, fetchStores, updateStoreData ,deleteStoreData} from '../../Redux/slice/StoreSlice';
 import StoreForm from '../../components/Forms/StoreForm';
-
+import { useTranslation } from 'react-i18next';
 
 function Stores() {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [selectedStore, setSelectedStore] = useState(null);
   const dispatch = useDispatch()
@@ -48,40 +49,40 @@ dispatch(deleteStoreData(id))
 
   const Columns = [
     {
-      title: 'Name',
+      title: t('name'),
       dataIndex: 'name',
       key: 'name',
 
     },
     {
-      title: 'Location',
+      title: t('location'),
       dataIndex: 'location',
       key: 'location',
     },
     {
-      title: 'Manager',
+      title: t('manager'),
       dataIndex: 'manager',
       key: 'manager',
     },
     {
-      title: 'Phone',
+      title: t('phone'),
       dataIndex: 'phone',
       key: 'phone',
     },
     {
-      title: 'Status',
+      title: t('status'),
       key: 'status',
       dataIndex: 'status',
       render: (_, { status }) => (
         <>
           {
-            status === "open" ? (
+            status === 'open' ? (
               <Tag color="green" key={status}>
-                {status}
+                {t(status)}
               </Tag>
             ) : (
               <Tag color="red" key={status}>
-                {status}
+                 {t(status)}
               </Tag>
             )
           }
@@ -92,7 +93,7 @@ dispatch(deleteStoreData(id))
       ),
     },
     {
-      title: 'Action',
+      title: t('action'),
       key: 'action',
       render: (_, record) => (
         <Space size="middle">

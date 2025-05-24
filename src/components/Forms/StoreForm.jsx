@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import { Drawer } from 'antd';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { useTranslation } from 'react-i18next';
 function StoreForm({ open, onClose, initialValues, onSubmit }) {
-
+const {t} = useTranslation()
     const formik = useFormik({
        
         initialValues: initialValues || {
@@ -31,7 +32,7 @@ function StoreForm({ open, onClose, initialValues, onSubmit }) {
     return (
         <div >
             <Drawer
-                title={`Add New Store`}
+                title={`Store Form`}
                 placement="right"
                 size={"378px"}
                 onClose={onClose}
@@ -39,7 +40,7 @@ function StoreForm({ open, onClose, initialValues, onSubmit }) {
                 className='store-form'
             >
                 <form onSubmit={formik.handleSubmit}>
-                    <label htmlFor="name">Name</label>
+                    <label htmlFor="name">{t('name')}</label>
                     <input
                         id="name"
                         name="name"
@@ -52,7 +53,7 @@ function StoreForm({ open, onClose, initialValues, onSubmit }) {
                         <div>{formik.errors.name}</div>
                     ) : null}
 
-                    <label htmlFor="manager">Manager</label>
+                    <label htmlFor="manager">{t('manager')}</label>
                     <input
                         id="manager"
                         name="manager"
@@ -65,7 +66,7 @@ function StoreForm({ open, onClose, initialValues, onSubmit }) {
                         <div>{formik.errors.manager}</div>
                     ) : null}
 
-                    <label htmlFor="location">Location</label>
+                    <label htmlFor="location">{t('location')}</label>
                     <input
                         id="location"
                         name="location"
@@ -79,7 +80,7 @@ function StoreForm({ open, onClose, initialValues, onSubmit }) {
                     ) : null}
 
 
-                    <label htmlFor="phone">Store Phone</label>
+                    <label htmlFor="phone">{t('phone')}</label>
                     <input
                         id="phone"
                         name="phone"
@@ -92,7 +93,7 @@ function StoreForm({ open, onClose, initialValues, onSubmit }) {
                         <div>{formik.errors.phone}</div>
                     ) : null}
 
-                    <label htmlFor="status">Status</label>
+                    <label htmlFor="status">{t('status')}</label>
                     <select
                         id="status"
                         name="status"
@@ -100,15 +101,15 @@ function StoreForm({ open, onClose, initialValues, onSubmit }) {
                         onBlur={formik.handleBlur}
                         value={formik.values.status}
                     >
-                        <option value="" label="Select status" />
-                        <option value="open" label="Open" />
-                        <option value="close" label="Close" />
+                        <option value="" label={t('selectStatus')} />
+                        <option value='open' label={t('open')} />
+                        <option value='close' label={t('close')} />
                     </select>
                     {formik.touched.status && formik.errors.status ? (
                         <div>{formik.errors.status}</div>
                     ) : null}
 
-                    <button type="submit">Submit</button>
+                    <button type="submit">{t('submit')}</button>
                 </form>
             </Drawer>
         </div>

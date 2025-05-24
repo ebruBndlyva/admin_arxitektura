@@ -2,31 +2,37 @@ import React from 'react'
 import { NavLink } from "react-router";
 import { FaAppStore, FaChartLine, FaHome, FaUsers, FaUserSecret } from "react-icons/fa";
 import { BsFillCartCheckFill } from 'react-icons/bs';
+import { useTranslation } from 'react-i18next';
+
+
 function Sidebar() {
+const {t} = useTranslation();
+console.log(t("stores"));
+
     return (
         <div className='sidebar'>
-            <h1>POS SYSTEM</h1>
+            <h1>POS  {t("system")}</h1>
             <ul>
                 <li>
-                    <NavLink to={""} className={({ isActive }) => isActive ? "navlink active" : "navlink"} >   <FaHome /> Dashboard</NavLink>
+                    <NavLink to={""} className={({ isActive }) => isActive ? "navlink active" : "navlink"} >   <FaHome />{ t("dashboard")}</NavLink>
                 </li>
                 <li>
                     <NavLink to={"/stores"} className={({ isActive }) => isActive ? "navlink active" : "navlink"}>
-                        <FaAppStore /> Stores</NavLink>
+                        <FaAppStore /> { t("stores")}</NavLink>
                 </li>
                 <li>
                     <NavLink to={"/users"} className={({ isActive }) => isActive ? "navlink active" : "navlink"}>
-                     <FaUsers /> Users
+                     <FaUsers /> { t("users")}
                      </NavLink>
                 </li>
                 <li>
-                    <NavLink to={"suppliers"} className={({ isActive }) => isActive ? "navlink active" : "navlink"}><FaUserSecret /> Suppliers</NavLink>
+                    <NavLink to={"suppliers"} className={({ isActive }) => isActive ? "navlink active" : "navlink"}><FaUserSecret /> { t("suppliers")}</NavLink>
                 </li>
                 <li>
-                    <NavLink to={"/products"} className={({ isActive }) => isActive ? "navlink active" : "navlink"}> <FaChartLine /> Products</NavLink>
+                    <NavLink to={"/products"} className={({ isActive }) => isActive ? "navlink active" : "navlink"}> <FaChartLine /> { t("products")}</NavLink>
                 </li>
                 <li>
-                    <NavLink to={"/orders"} className={({ isActive }) => isActive ? "navlink active" : "navlink"}> <BsFillCartCheckFill /> Orders</NavLink>
+                    <NavLink to={"/orders"} className={({ isActive }) => isActive ? "navlink active" : "navlink"}> <BsFillCartCheckFill /> { t("orders")}</NavLink>
                 </li>
             </ul>
         </div>
